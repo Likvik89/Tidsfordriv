@@ -8,38 +8,38 @@ def switch_frame(frame_to_show):
 root = tk.Tk()
 root.title("Window Switcher")
 
-# Create three frames
-frame1 = tk.Frame(root)
-frame2 = tk.Frame(root)
-frame3 = tk.Frame(root)
+# Create three frames (Start, Morse, Caesar)
+start_frame = tk.Frame(root)
+morse_frame = tk.Frame(root)
+caesar_frame = tk.Frame(root)
 
-# Create buttons in frame1
-btn_to_frame2 = tk.Button(frame1, text="Go to Window 2", command=lambda: switch_frame(frame2))
-btn_to_frame2.pack(pady=10)
+# Create buttons in the start frame
+btn_to_morse = tk.Button(start_frame, text="Go to Morse", command=lambda: switch_frame(morse_frame))
+btn_to_morse.pack(pady=10)
 
-btn_to_frame3 = tk.Button(frame1, text="Go to Window 3", command=lambda: switch_frame(frame3))
-btn_to_frame3.pack(pady=10)
+btn_to_caesar = tk.Button(start_frame, text="Go to Caesar", command=lambda: switch_frame(caesar_frame))
+btn_to_caesar.pack(pady=10)
 
-# Create buttons in frame2
-btn_to_frame1 = tk.Button(frame2, text="Go to Window 1", command=lambda: switch_frame(frame1))
-btn_to_frame1.pack(pady=10)
+# Create buttons in the morse frame
+btn_to_start = tk.Button(morse_frame, text="Go to Start", command=lambda: switch_frame(start_frame))
+btn_to_start.pack(pady=10)
 
-btn_to_frame3 = tk.Button(frame2, text="Go to Window 3", command=lambda: switch_frame(frame3))
-btn_to_frame3.pack(pady=10)
+btn_to_caesar = tk.Button(morse_frame, text="Go to Caesar", command=lambda: switch_frame(caesar_frame))
+btn_to_caesar.pack(pady=10)
 
-# Create buttons in frame3
-btn_to_frame1 = tk.Button(frame3, text="Go to Window 1", command=lambda: switch_frame(frame1))
-btn_to_frame1.pack(pady=10)
+# Create buttons in the caesar frame
+btn_to_start = tk.Button(caesar_frame, text="Go to Start", command=lambda: switch_frame(start_frame))
+btn_to_start.pack(pady=10)
 
-btn_to_frame2 = tk.Button(frame3, text="Go to Window 2", command=lambda: switch_frame(frame2))
-btn_to_frame2.pack(pady=10)
+btn_to_morse = tk.Button(caesar_frame, text="Go to Morse", command=lambda: switch_frame(morse_frame))
+btn_to_morse.pack(pady=10)
 
 # Pack all frames
-for frame in (frame1, frame2, frame3):
+for frame in (start_frame, morse_frame, caesar_frame):
     frame.grid(row=0, column=0, sticky="nsew")
 
-# Show the first frame initially
-switch_frame(frame1)
+# Show the start frame initially
+switch_frame(start_frame)
 
 # Start the Tkinter event loop
 root.mainloop()
