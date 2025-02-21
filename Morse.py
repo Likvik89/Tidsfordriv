@@ -1,2 +1,0 @@
-def morseify():
-    pass
